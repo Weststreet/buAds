@@ -44,6 +44,7 @@ UIViewController *mViewController;
 
 - (FlutterError*)onListenWithArguments:(id)arguments eventSink:(FlutterEventSink)eventSink {
     [buAds addRewardVerifyedHandler:^(NSString * _Nonnull result) {
+        NSLog(@"%@",result);
         eventSink(result);
     }];
     return nil;
