@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-import 'package:flutter/services.dart';
 import 'package:buads/buads.dart';
 
 void main() => runApp(MyApp());
@@ -19,7 +18,7 @@ class _MyAppState extends State<MyApp> {
     super.initState();
     init('5026194');
     loadAd('926194336', '10026');
-    _streamSubscriptions.add(gyroscopeEvents.listen((String result) {
+    _streamSubscriptions.add(buAdEvents.listen((String result) {
       print('获得$result金币啊aa');
     }));
 

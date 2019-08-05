@@ -3,18 +3,18 @@ import 'dart:async';
 import 'package:flutter/services.dart';
 
 const MethodChannel _channel = const MethodChannel('buads');
-const EventChannel _gyroscopeEventChannel =
+const EventChannel _buAdEventChannel =
     EventChannel('plugins.flutter.io/buads');
-Stream<String> _gyroscopeEvents;
+Stream<String> _buAdEvents;
 
 /// A broadcast stream of events from the device gyroscope.
-Stream<String> get gyroscopeEvents {
-  if (_gyroscopeEvents == null) {
-    _gyroscopeEvents = _gyroscopeEventChannel
+Stream<String> get buAdEvents {
+  if (_buAdEvents == null) {
+    _buAdEvents = _buAdEventChannel
         .receiveBroadcastStream()
         .map((dynamic event) => event.toString());
   }
-  return _gyroscopeEvents;
+  return _buAdEvents;
 }
 
 init(String appId) async {
