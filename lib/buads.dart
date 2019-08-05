@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 
 const MethodChannel _channel = const MethodChannel('buads');
 const EventChannel _gyroscopeEventChannel =
-    EventChannel('plugins.flutter.io/sensors/gyroscope');
+    EventChannel('plugins.flutter.io/buads');
 Stream<String> _gyroscopeEvents;
 
 /// A broadcast stream of events from the device gyroscope.

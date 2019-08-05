@@ -15,7 +15,7 @@ UIViewController *mViewController;
     
     RewardVerifyedStreamHandler* rewardVerifyedStreamHandler = [[RewardVerifyedStreamHandler alloc] init];
     FlutterEventChannel* eventChannel =
-    [FlutterEventChannel eventChannelWithName:@"plugins.flutter.io/sensors/gyroscope"
+    [FlutterEventChannel eventChannelWithName:@"plugins.flutter.io/buads"
                               binaryMessenger:[registrar messenger]];
     [eventChannel setStreamHandler:rewardVerifyedStreamHandler];
 }
