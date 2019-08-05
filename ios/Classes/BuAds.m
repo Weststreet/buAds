@@ -97,6 +97,8 @@
     if(self.completionHandlers!=nil){
         NSLog(@"开始回调");
         self.completionHandlers(@"恭喜你，获取金币成功");
+    }else{
+        NSLog(@"注册回调失败");
     }
 }
 

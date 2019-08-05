@@ -25,10 +25,13 @@ UIViewController *mViewController;
 
 - (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result {
     if ([@"init" isEqualToString:call.method]) {
+        NSLog(@"init");
         [buAds init:call.arguments[@"appId"]];
     }else if ([@"loadAd" isEqualToString:call.method]) {
+         NSLog(@"loadAd");
         [buAds loadAd:call.arguments[@"slotID"] :call.arguments[@"uid"] ];
     } else if ([@"showRewardedVideoAd" isEqualToString:call.method]) {
+        NSLog(@"showRewardedVideoAd");
         [buAds showRewardedVideoAd:mViewController];
     } else if ([@"isAdValid" isEqualToString:call.method]) {
         result([NSNumber numberWithBool:[buAds isAdValid]]);
