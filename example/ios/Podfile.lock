@@ -1,0 +1,29 @@
+PODS:
+  - buads (0.0.1):
+    - Bytedance-UnionAD (= 1.9.8.2)
+    - Flutter
+  - Bytedance-UnionAD (1.9.8.2)
+  - Flutter (1.0.0)
+
+DEPENDENCIES:
+  - buads (from `.symlinks/plugins/buads/ios`)
+  - Flutter (from `.symlinks/flutter/ios`)
+
+SPEC REPOS:
+  https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
+    - Bytedance-UnionAD
+
+EXTERNAL SOURCES:
+  buads:
+    :path: ".symlinks/plugins/buads/ios"
+  Flutter:
+    :path: ".symlinks/flutter/ios"
+
+SPEC CHECKSUMS:
+  buads: f9ac996c9425ff517f6723c5f074840b90df0fcc
+  Bytedance-UnionAD: 9643b636d7b2df3e01bf0c0c0d1dd44c4493e0c7
+  Flutter: 58dd7d1b27887414a370fcccb9e645c08ffd7a6a
+
+PODFILE CHECKSUM: 686af2209b2e886f30c5cfd5a6db043e2fb358c7
+
+COCOAPODS: 1.6.0
