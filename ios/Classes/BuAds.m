@@ -81,18 +81,18 @@
 }
 
 - (void)rewardedVideoAdServerRewardDidFail:(BURewardedVideoAd *)rewardedVideoAd {
-    NSLog(@"rewardedVideoAd verify failed");
+    NSLog(@"rewardedVideoAd verify failedddddddddd");
     
-    NSLog(@"Demo RewardName == %@", rewardedVideoAd.rewardedVideoModel.rewardName);
-    NSLog(@"Demo RewardAmount == %ld", (long)rewardedVideoAd.rewardedVideoModel.rewardAmount);
+    NSLog(@"Demo RewardNamertt == %@", rewardedVideoAd.rewardedVideoModel.rewardName);
+    NSLog(@"Demo RewardAmountdsfds == %ld", (long)rewardedVideoAd.rewardedVideoModel.rewardAmount);
 }
 
 - (void)rewardedVideoAdServerRewardDidSucceed:(BURewardedVideoAd *)rewardedVideoAd verify:(BOOL)verify{
     NSLog(@"rewardedVideoAd verify succeed");
     NSLog(@"verify result: %@", verify ? @"success" : @"fail");
     
-    NSLog(@"Demo RewardName == %@", rewardedVideoAd.rewardedVideoModel.rewardName);
-    NSLog(@"Demo RewardAmount == %ld", (long)rewardedVideoAd.rewardedVideoModel.rewardAmount);
+    NSLog(@"Demo RewardNameeeee == %@", rewardedVideoAd.rewardedVideoModel.rewardName);
+    NSLog(@"Demo RewardAmountttttt == %ld", (long)rewardedVideoAd.rewardedVideoModel.rewardAmount);
     
     if(self.completionHandlers!=nil){
         NSLog(@"开始回调");
