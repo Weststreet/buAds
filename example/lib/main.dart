@@ -17,9 +17,10 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-
+    init('5026194');
+    loadAd('926194336', '10026');
     _streamSubscriptions.add(gyroscopeEvents.listen((String result) {
-      print('获得$result金币啊');
+      print('获得$result金币啊aa');
     }));
 
   }
