@@ -12,7 +12,7 @@
 #import <BUAdSDK/BURewardedVideoModel.h>
 
 NS_ASSUME_NONNULL_BEGIN
-typedef void (^completionHandler)(NSInteger* coins);
+typedef void (^completionHandler)(NSString* result);
 @interface BuAds : NSObject <BURewardedVideoAdDelegate>
 - (void)init:(NSString*)appId;
 - (void)loadAd:(NSString *)slotID :(NSString *)uid;

@@ -43,8 +43,8 @@ UIViewController *mViewController;
 @implementation RewardVerifyedStreamHandler
 
 - (FlutterError*)onListenWithArguments:(id)arguments eventSink:(FlutterEventSink)eventSink {
-    [buAds addRewardVerifyedHandler:^(NSInteger * _Nonnull coins) {
-        eventSink([NSString stringWithFormat:@"%d",coins]);
+    [buAds addRewardVerifyedHandler:^(NSString * _Nonnull result) {
+        eventSink(result);
     }];
     return nil;
 }
