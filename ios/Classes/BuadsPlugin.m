@@ -43,6 +43,7 @@ UIViewController *mViewController;
 @implementation RewardVerifyedStreamHandler
 
 - (FlutterError*)onListenWithArguments:(id)arguments eventSink:(FlutterEventSink)eventSink {
+    NSLog(@"注册金币回调");
     [buAds addRewardVerifyedHandler:^(NSString * _Nonnull result) {
         NSLog(@"%@",result);
         eventSink(result);

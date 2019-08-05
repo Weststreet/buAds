@@ -93,7 +93,9 @@
     
     NSLog(@"Demo RewardName == %@", rewardedVideoAd.rewardedVideoModel.rewardName);
     NSLog(@"Demo RewardAmount == %ld", (long)rewardedVideoAd.rewardedVideoModel.rewardAmount);
+    
     if(self.completionHandlers!=nil){
+        NSLog(@"开始回调");
         self.completionHandlers(@"恭喜你，获取金币成功");
     }
 }
