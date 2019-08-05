@@ -102,13 +102,6 @@
     }
 }
 
--(BOOL)shouldAutorotate{
-    return YES;
-}
-
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskAll;
-}
 
 -(void) addRewardVerifyedHandler:(completionHandler)handler {
     self.completionHandlers=handler;
