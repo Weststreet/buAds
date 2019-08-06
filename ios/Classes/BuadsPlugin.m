@@ -9,11 +9,11 @@ UIViewController *mViewController;
                                      methodChannelWithName:@"buads"
                                      binaryMessenger:[registrar messenger]];
     NSLog(@"registerWithRegistrar");
-    RewardVerifyedStreamHandler* rewardVerifyedStreamHandler = [[RewardVerifyedStreamHandler alloc] init];
+    BuRewardVerifyedStreamHandler* buRewardVerifyedStreamHandler = [[BuRewardVerifyedStreamHandler alloc] init];
     FlutterEventChannel* eventChannel =
     [FlutterEventChannel eventChannelWithName:@"plugins.flutter.io/buads"
                               binaryMessenger:[registrar messenger]];
-    [eventChannel setStreamHandler:rewardVerifyedStreamHandler];
+    [eventChannel setStreamHandler:buRewardVerifyedStreamHandler];
     
     BuadsPlugin* instance = [[BuadsPlugin alloc] init];
     buAds=[[BuAds alloc] init];
@@ -39,14 +39,14 @@ UIViewController *mViewController;
         result(FlutterMethodNotImplemented);
     }
     
-    
+
 }
 
 @end
 
 
 
-@implementation RewardVerifyedStreamHandler
+@implementation BuRewardVerifyedStreamHandler
 
 - (FlutterError*)onListenWithArguments:(id)arguments eventSink:(FlutterEventSink)eventSink {
     NSLog(@"注册金币回调");

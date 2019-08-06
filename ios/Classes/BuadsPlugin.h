@@ -3,5 +3,5 @@
 
 @interface BuadsPlugin : NSObject<FlutterPlugin>
 @end
-@interface RewardVerifyedStreamHandler : NSObject <FlutterStreamHandler>
+@interface BuRewardVerifyedStreamHandler : NSObject <FlutterStreamHandler>
 @end
