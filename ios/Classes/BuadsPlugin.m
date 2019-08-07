@@ -3,7 +3,7 @@
 
 @implementation BuadsPlugin
 BuAds *buAds;
-UIViewController *mViewController;
+UIViewController *mBuViewController;
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
     FlutterMethodChannel* channel = [FlutterMethodChannel
                                      methodChannelWithName:@"buads"
@@ -18,7 +18,7 @@ UIViewController *mViewController;
     BuadsPlugin* instance = [[BuadsPlugin alloc] init];
     buAds=[[BuAds alloc] init];
     [registrar addMethodCallDelegate:instance channel:channel];
-    mViewController = [[[[UIApplication sharedApplication]delegate] window]rootViewController];
+    mBuViewController = [[[[UIApplication sharedApplication]delegate] window]rootViewController];
     
     
 }
@@ -32,7 +32,7 @@ UIViewController *mViewController;
         [buAds loadAd:call.arguments[@"slotID"] :call.arguments[@"uid"] ];
     } else if ([@"showRewardedVideoAd" isEqualToString:call.method]) {
         NSLog(@"showRewardedVideoAd");
-        [buAds showRewardedVideoAd:mViewController];
+        [buAds showRewardedVideoAd:mBuViewController];
     } else if ([@"isAdValid" isEqualToString:call.method]) {
         result([NSNumber numberWithBool:[buAds isAdValid]]);
     } else {
