@@ -42,6 +42,10 @@ class _MyAppState extends State<MyApp> {
             FlatButton(onPressed: (){
               loadAd('926194336', '10026');
             },child: Text('加载视频'),),
+
+            FlatButton(onPressed: (){
+              isReady();
+            },child: Text('isReady'),),
             FlatButton(onPressed: (){
               showRewardedVideoAd();
             },child: Text('显示视频'),),
@@ -51,4 +55,9 @@ class _MyAppState extends State<MyApp> {
       ),
     );
   }
+  isReady() async{
+    bool isReady= await isBuAdReady();
+    print("isReady==$isReady");
+  }
+
 }

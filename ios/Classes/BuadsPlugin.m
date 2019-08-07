@@ -33,8 +33,9 @@ UIViewController *mBuViewController;
     } else if ([@"showRewardedVideoAd" isEqualToString:call.method]) {
         NSLog(@"showRewardedVideoAd");
         [buAds showRewardedVideoAd:mBuViewController];
-    } else if ([@"isAdValid" isEqualToString:call.method]) {
-        result([NSNumber numberWithBool:[buAds isAdValid]]);
+    } else if ([@"isReady" isEqualToString:call.method]) {
+    bool isReady=[buAds isAdValid];
+        result(@(isReady));
     } else {
         result(FlutterMethodNotImplemented);
     }

@@ -33,3 +33,7 @@ loadAd(String slotID, String uid) async {
 showRewardedVideoAd() async {
   await _channel.invokeMethod('showRewardedVideoAd');
 }
+
+isBuAdReady() async {
+  return await _channel.invokeMethod('isReady');
+}
