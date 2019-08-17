@@ -51,9 +51,9 @@ UIViewController *mBuViewController;
 
 - (FlutterError*)onListenWithArguments:(id)arguments eventSink:(FlutterEventSink)eventSink {
     NSLog(@"注册金币回调");
-    [buAds addRewardVerifyedHandler:^(NSString * _Nonnull result) {
-        NSLog(@"%@",result);
-        eventSink(result);
+    [buAds addRewardVerifyedHandler:^(long result) {
+    
+        eventSink([NSString stringWithFormat:@"恭喜你获得%ld枚金币！",(long)result]);
     }];
     return nil;
 }
