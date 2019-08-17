@@ -96,7 +96,7 @@
     
     if(self.completionHandlers!=nil){
         NSLog(@"开始回调");
-        self.completionHandlers((long)rewardedVideoAd.rewardedVideoModel.rewardAmount);
+       self.completionHandlers([NSString stringWithFormat:@"恭喜你获得%ld枚金币！",(long)rewardedVideoAd.rewardedVideoModel.rewardAmount] );
     }else{
         NSLog(@"注册回调失败");
     }
