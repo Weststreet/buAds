@@ -61,6 +61,12 @@
 
 - (void)rewardedVideoAdDidClick:(BURewardedVideoAd *)rewardedVideoAd {
     NSLog(@"rewardedVideoAd video did click");
+    if(self.completionHandlers!=nil){
+        NSLog(@"开始回调");
+        self.completionHandlers(@"用户点击了视频|1");
+    }else{
+        NSLog(@"注册回调失败");
+    }
 }
 
 - (void)rewardedVideoAd:(BURewardedVideoAd *)rewardedVideoAd didFailWithError:(NSError *)error {
@@ -96,7 +102,7 @@
     
     if(self.completionHandlers!=nil){
         NSLog(@"开始回调");
-       self.completionHandlers([NSString stringWithFormat:@"恭喜你获得%ld枚金币！",(long)rewardedVideoAd.rewardedVideoModel.rewardAmount] );
+       self.completionHandlers([NSString stringWithFormat:@"恭喜你获得%ld枚金币！|0",(long)rewardedVideoAd.rewardedVideoModel.rewardAmount] );
     }else{
         NSLog(@"注册回调失败");
     }

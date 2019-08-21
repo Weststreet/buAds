@@ -19,7 +19,12 @@ class _MyAppState extends State<MyApp> {
     init('5026194');
     loadAd('926194336', '10026');
     _streamSubscriptions.add(buAdEvents.listen((String result) {
-      print('获得$result金币啊aa');
+      if(result.contains('|')){
+        String msg=result.split('|')[0];
+        String type=result.split('|')[1];
+        print('msg:$msg,type=$type');
+      }
+
     }));
 
   }
