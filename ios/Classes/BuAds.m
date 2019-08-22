@@ -34,21 +34,22 @@
 
 - (void)rewardedVideoAdDidLoad:(BURewardedVideoAd *)rewardedVideoAd {
     NSLog(@"rewardedVideoAd data load success");
-//    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-//    hud.mode = MBProgressHUDModeText;
-//    hud.offset = CGPointMake(0, -100);
-//    hud.label.text = @"reawrded data load success";
-//    [hud hideAnimated:YES afterDelay:0.1];
+    if(self.completionHandlers!=nil){
+        NSLog(@"开始回调");
+        self.completionHandlers(@"视频数据加载成功|4");
+    }else{
+        NSLog(@"注册回调失败");
+    }
 }
 
 - (void)rewardedVideoAdVideoDidLoad:(BURewardedVideoAd *)rewardedVideoAd {
     NSLog(@"rewardedVideoAd video load success");
-    
-//    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-//    hud.mode = MBProgressHUDModeText;
-//    hud.offset = CGPointMake(0, -100);
-//    hud.label.text = @"reawrded video load success";
-//    [hud hideAnimated:YES afterDelay:1];
+    if(self.completionHandlers!=nil){
+        NSLog(@"开始回调");
+        self.completionHandlers(@"视频加载成功|3");
+    }else{
+        NSLog(@"注册回调失败");
+    }
 }
 
 - (void)rewardedVideoAdWillVisible:(BURewardedVideoAd *)rewardedVideoAd {
@@ -57,6 +58,12 @@
 
 - (void)rewardedVideoAdDidClose:(BURewardedVideoAd *)rewardedVideoAd {
     NSLog(@"rewardedVideoAd video did close");
+    if(self.completionHandlers!=nil){
+        NSLog(@"开始回调");
+        self.completionHandlers(@"关闭了视频|2");
+    }else{
+        NSLog(@"注册回调失败");
+    }
 }
 
 - (void)rewardedVideoAdDidClick:(BURewardedVideoAd *)rewardedVideoAd {
@@ -71,11 +78,6 @@
 
 - (void)rewardedVideoAd:(BURewardedVideoAd *)rewardedVideoAd didFailWithError:(NSError *)error {
     NSLog(@"rewardedVideoAd data load fail%ld",(long)error.code);
-//    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-//    hud.mode = MBProgressHUDModeText;
-//    hud.offset = CGPointMake(0, -100);
-//    hud.label.text = @"rewarded video material load fail";
-//    [hud hideAnimated:YES afterDelay:1];
 }
 
 - (void)rewardedVideoAdDidPlayFinish:(BURewardedVideoAd *)rewardedVideoAd didFailWithError:(NSError *)error {
