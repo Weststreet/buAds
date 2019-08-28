@@ -78,6 +78,12 @@
 
 - (void)rewardedVideoAd:(BURewardedVideoAd *)rewardedVideoAd didFailWithError:(NSError *)error {
     NSLog(@"rewardedVideoAd data load fail%ld",(long)error.code);
+    if(self.completionHandlers!=nil){
+            NSLog(@"开始回调");
+            self.completionHandlers(@"视频加载失败|5");
+        }else{
+            NSLog(@"注册回调失败");
+        }
 }
 
 - (void)rewardedVideoAdDidPlayFinish:(BURewardedVideoAd *)rewardedVideoAd didFailWithError:(NSError *)error {

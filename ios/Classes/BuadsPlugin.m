@@ -27,12 +27,14 @@ UIViewController *mBuViewController;
     if ([@"init" isEqualToString:call.method]) {
         NSLog(@"init");
         [buAds init:call.arguments[@"appId"]];
+        result(@"success");
     }else if ([@"loadAd" isEqualToString:call.method]) {
          NSLog(@"loadAd");
         [buAds loadAd:call.arguments[@"slotID"] :call.arguments[@"uid"] ];
     } else if ([@"showRewardedVideoAd" isEqualToString:call.method]) {
         NSLog(@"showRewardedVideoAd");
         [buAds showRewardedVideoAd:mBuViewController];
+        result(@"begin load");
     } else if ([@"isReady" isEqualToString:call.method]) {
     bool isReady=[buAds isAdValid];
         result(@(isReady));
