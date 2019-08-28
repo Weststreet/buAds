@@ -20,14 +20,14 @@ Stream<String> get buAdEvents {
 init(String appId) async {
   final Map<String, dynamic> params = {};
   params['appId'] = appId;
-  await _channel.invokeMethod('init', params);
+  return await _channel.invokeMethod('init', params);
 }
 
 loadAd(String slotID, String uid) async {
   final Map<String, dynamic> params = {};
   params['slotID'] = slotID;
   params['uid'] = uid;
-  await _channel.invokeMethod('loadAd', params);
+  return await _channel.invokeMethod('loadAd', params);
 }
 
 showRewardedVideoAd() async {
