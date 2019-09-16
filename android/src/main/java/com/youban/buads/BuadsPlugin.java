@@ -24,6 +24,7 @@ public class BuadsPlugin implements MethodCallHandler {
     private TTRewardVideoAd mttRewardVideoAd;
     private Registrar registrar;
     private static EventChannel.EventSink eventSink;
+    private boolean isReady=false;
     /**
      * Plugin registration.
      */
@@ -68,7 +69,7 @@ public class BuadsPlugin implements MethodCallHandler {
             showVideo();
             result.success("");
         } else if (call.method.equals("isReady")) {
-
+            result.success(isReady);
         } else {
             result.notImplemented();
         }
@@ -119,6 +120,7 @@ public class BuadsPlugin implements MethodCallHandler {
             //视频广告加载后，视频资源缓存到本地的回调，在此回调后，播放本地视频，流畅不阻塞。
             @Override
             public void onRewardVideoCached() {
+                isReady=true;
                 if(eventSink!=null) {
                     eventSink.success("视频加载成功|3");
                 }
