@@ -24,7 +24,8 @@ public class BuadsPlugin implements MethodCallHandler {
     private TTRewardVideoAd mttRewardVideoAd;
     private Registrar registrar;
     private static EventChannel.EventSink eventSink;
-    private boolean isReady=false;
+    private boolean isReady = false;
+
     /**
      * Plugin registration.
      */
@@ -38,7 +39,7 @@ public class BuadsPlugin implements MethodCallHandler {
         eventChannel.setStreamHandler(new EventChannel.StreamHandler() {
             @Override
             public void onListen(Object o, EventChannel.EventSink sink) {
-                eventSink=sink;
+                eventSink = sink;
             }
 
             @Override
@@ -86,7 +87,7 @@ public class BuadsPlugin implements MethodCallHandler {
     }
 
     void showVideo() {
-        Log.d("TAG","showAdVideo");
+        Log.d("TAG", "showAdVideo");
         if (mttRewardVideoAd != null) {
             //step6:在获取到广告后展示
             //该方法直接展示广告
@@ -120,8 +121,8 @@ public class BuadsPlugin implements MethodCallHandler {
             //视频广告加载后，视频资源缓存到本地的回调，在此回调后，播放本地视频，流畅不阻塞。
             @Override
             public void onRewardVideoCached() {
-                isReady=true;
-                if(eventSink!=null) {
+                isReady = true;
+                if (eventSink != null) {
                     eventSink.success("视频加载成功|3");
                 }
             }
@@ -134,22 +135,22 @@ public class BuadsPlugin implements MethodCallHandler {
 
                     @Override
                     public void onAdShow() {
-                        if(eventSink!=null) {
+                        if (eventSink != null) {
                             eventSink.success("视频加载成功|3");
-                            Log.d("TAG","onAdShow");
-                        }else{
-                            Log.d("TAG","onAdShow null");
+                            Log.d("TAG", "onAdShow");
+                        } else {
+                            Log.d("TAG", "onAdShow null");
                         }
                     }
 
                     @Override
                     public void onAdVideoBarClick() {
-                        if(eventSink!=null) eventSink.success("用户点击了视频|1");
+                        if (eventSink != null) eventSink.success("用户点击了视频|1");
                     }
 
                     @Override
                     public void onAdClose() {
-                        if(eventSink!=null) eventSink.success("关闭了视频|2");
+                        if (eventSink != null) eventSink.success("关闭了视频|2");
                     }
 
                     //视频播放完成回调
@@ -159,15 +160,13 @@ public class BuadsPlugin implements MethodCallHandler {
 
                     @Override
                     public void onVideoError() {
-                        if(eventSink!=null) eventSink.success("视频加载失败|5");
+                        if (eventSink != null) eventSink.success("视频加载失败|5");
                     }
 
                     //视频播放完成后，奖励验证回调，rewardVerify：是否有效，rewardAmount：奖励梳理，rewardName：奖励名称
                     @Override
                     public void onRewardVerify(boolean rewardVerify, int rewardAmount, String rewardName) {
-                        if(rewardVerify) {
-                            if(eventSink!=null) eventSink.success("恭喜你获得%ld枚金币！|0");
-                        }
+                        if (eventSink != null) eventSink.success("恭喜你获得%ld枚金币！|0");
                     }
 
                     @Override
@@ -206,8 +205,6 @@ public class BuadsPlugin implements MethodCallHandler {
             }
         });
     }
-
-
 
 
 }
