@@ -16,6 +16,10 @@ rootProject.allprojects {
     repositories {
         google()
         jcenter()
+        flatDir {
+            dirs project(':buads').file('libs')
+            // e.g. dirs project(':url_launcher').file('libs')  - don't miss the ':'
+        }
     }
 }
 
@@ -31,4 +35,11 @@ android {
     lintOptions {
         disable 'InvalidPackage'
     }
+
+
+}
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation(name: 'open_ad_sdk', ext: 'aar')
+    compile 'pl.droidsonroids.gif:android-gif-drawable:1.2.6'
 }
