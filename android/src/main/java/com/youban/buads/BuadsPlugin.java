@@ -79,12 +79,13 @@ public class BuadsPlugin implements MethodCallHandler {
         //step1:初始化sdk
         TTAdManager ttAdManager = TTAdManagerHolder.get();
 //        //step2:(可选，强烈建议在合适的时机调用):申请部分权限，如read_phone_state,防止获取不了imei时候，下载类广告没有填充的问题。
-//        TTAdManagerHolder.get().requestPermissionIfNecessary(registrar.context());
+        TTAdManagerHolder.get().requestPermissionIfNecessary(registrar.context());
         //step3:创建TTAdNative对象,用于调用广告请求接口
         mTTAdNative = ttAdManager.createAdNative(registrar.context());
     }
 
     void showVideo() {
+        Log.d("TAG","showAdVideo");
         if (mttRewardVideoAd != null) {
             //step6:在获取到广告后展示
             //该方法直接展示广告
