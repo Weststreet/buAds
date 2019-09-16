@@ -16,12 +16,15 @@
          In most cases you can leave this as-is, but you if you want to provide
          additional functionality it is fine to subclass or reimplement
          FlutterApplication and put your custom class here. -->
-    <application>
+    <application
+        android:name="io.flutter.app.FlutterApplication"
+        android:label="buads_example"
+        tools:replace="android:label">
 
 
         <provider
             android:name="com.bytedance.sdk.openadsdk.TTFileProvider"
-            android:authorities="com.youban.buads.TTFileProvider"
+            android:authorities="${applicationId}.TTFileProvider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
@@ -31,7 +34,7 @@
 
         <provider
             android:name="com.bytedance.sdk.openadsdk.multipro.TTMultiProvider"
-            android:authorities="com.youban.buads.TTMultiProvider"
+            android:authorities="${applicationId}.TTMultiProvider"
             android:exported="false" />
 
     </application>
