@@ -3,7 +3,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'buads'
-  s.version          = '0.0.1'
+  s.version          = '0.0.2'
   s.summary          = 'A new flutter plugin project.'
   s.description      = <<-DESC
 A new flutter plugin project.
@@ -15,7 +15,7 @@ A new flutter plugin project.
   s.source_files = 'Classes/**/*'
   s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
-  s.dependency 'Bytedance-UnionAD', '1.9.8.2'
+  s.dependency 'Bytedance-UnionAD', '2.4.6.7'
   s.ios.deployment_target = '8.0'
   s.static_framework = true
   s.requires_arc = true
